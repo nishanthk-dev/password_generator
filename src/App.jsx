@@ -83,7 +83,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="container">
+      <div>
         <div className="generator">
           <h2 className="generator__header">Password Generator</h2>
           <div className="generator__password">
@@ -105,7 +105,6 @@ const App = () => {
               Password length: {passwordLength}
             </label>
             <input
-              className="pw"
               defaultValue={passwordLength}
               onChange={(e) => setPasswordLength(e.target.value)}
               type="range"
@@ -162,10 +161,9 @@ const App = () => {
       </div>
       <div className="prev-passwords">
         <h3>Previous Passwords:</h3>
-        <ul className="">
+        <ul>
           {lastFivePasswords.map((password, index) => (
             <li
-              className="last-password"
               key={index}
               onClick={() => {
                 navigator.clipboard.writeText(password);
